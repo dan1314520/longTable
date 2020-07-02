@@ -1,0 +1,70 @@
+// 有关于element UI的样式
+.select-append{
+  width: 65px
+}
+/**************************************************** 列表sort ******************************************************/
+.table{
+    /deep/.el-table .sort-caret.descending{
+        bottom: 0px;
+    }
+    /deep/.el-table .sort-caret.ascending {
+        top: 0px;
+    }
+    /deep/.el-table .caret-wrapper {
+        display: inline-block;
+        height: 22px;
+        width: 10px;
+    }
+    /deep/.el-table__body tr.current-row.activeRow:hover>td,
+    /deep/.el-table__row.current-row.hover-row>td{
+      background-color: #ecf1ff;
+        cursor: pointer;
+   }
+}
+
+/*************************************************** message-box 统一样式 **********************************************/
+@pad: 20px;
+.el-message-box {
+    &__header {
+      padding: 12px @pad;
+      .border-bottom;
+    }
+    &__title {
+      font-size  : 16px !important;
+      font-weight: bold;
+    }
+    &__headerbtn {
+      top: 12px;
+    }
+    &__content{
+      padding: 0 !important;
+      margin : @pad
+    }
+    &__btns{
+      margin-top    : @pad;
+      padding-left  : @pad;
+      padding-right : @pad;
+      padding-bottom: 10px;
+    }
+  }
+/* ***************************************** 列表 dropdown ************************************************/
+.el-table__row>td>.cell{
+  /deep/.el-dropdown{
+    height: 10px 
+  }
+}
+/* ****************************************** 弹出层 popper ********************************************** */
+.table-btn-popper{
+    padding: 2px 15px !important;
+  /deep/.el-button--text {
+    font-weight: bold;
+  }
+}
+a.el-link{
+  text-decoration: none;
+  font-size: 12px !important;
+}
+body /deep/.el-table th.gutter{ //用于处理列表横向滚动条滚动错位问题
+  display: table-cell!important;
+  width: 18px !important;
+}

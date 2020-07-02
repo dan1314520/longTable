@@ -1,0 +1,255 @@
+@import './utils.less';
+@import './height.less';
+@import './element.less';
+
+/********************************************* 默认公共样式 ***********************************************/
+// app 默认公共样式
+#app {
+  font-family            : "Avenir", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+html {
+  overflow: auto;
+}
+
+body {
+  padding: 0;
+  margin : 0;
+}
+
+* {
+  padding: 0;
+  margin : 0;
+  border : 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+// iconfont
+.iconfont {
+  margin-right: 5px;
+}
+
+/***********************************************列表页公共样式， 所有列表页依照此样式 *******************************************/
+// page 列表页公共样式
+@search-right-width: 200px;
+@page-padding      : 20px;
+
+.page {
+  .bg-fff;
+  margin-bottom: 0;
+  padding      : 0 @page-padding;
+
+  // 列表上方操作按钮
+  &-buttons {
+    height        : 40px;
+    line-height   : 40px;
+    position: relative;
+
+    // upload 批量导入按钮可能会用到;在page-buttons中生效
+    .bacth-upload {
+      margin-left: 10px
+    }
+  }
+
+  // page 搜索
+  &-search {
+    padding-top  : 12px;
+    padding-bottom: 3px;
+    position     : relative;
+    .border-bottom;
+    // 搜索表单
+    .el-form-item--mini.el-form-item {
+      margin-bottom: 10px;
+    }
+    //搜索输入框,宽度固定为170px,在<div class="page-search"></div>中生效
+    .el-input{
+      .w140
+    }
+    .el-date-editor.el-input{
+      .w140
+    }
+  }
+
+  // table table列表放在<div class="table"></div>中生效
+  .table {
+    margin-left : -@page-padding;
+    margin-right: -@page-padding;
+    .el-table--border td:first-child.is-right .cell{
+      padding-left:0
+    }
+    .el-table{
+      .el-table__fixed,
+       .el-table__fixed-right {
+         height: 100% !important;
+       }
+       &.el-table--fluid-height {
+         &.el-table--scrollable-y{
+           .el-table__fixed-body-wrapper{
+             bottom:1px;
+             max-height: none !important;
+           }
+           &.el-table--scrollable-x{
+             .el-table__fixed-body-wrapper{
+               bottom:8px;
+               max-height: none !important;
+             }
+           }
+         }
+       }
+     }
+
+    .page-table-header{
+      background: rgba(231, 239, 255, 1) ;
+      color     : #1b1b1b;
+      font-weight: bold;
+    }
+    th {
+      background: rgba(231, 239, 255, 1) !important;
+      color     : #1b1b1b;
+      font-weight: bold;
+    }
+
+    // table无数据
+    .el-table__empty-block {
+      background-image   : url('~@/assets/image/error-page/page_null.png');
+      height             : 55vh;
+      min-height         : 400px;
+      background-repeat  : no-repeat;
+      background-position: 50% 50%;
+    }
+
+    .el-table__empty-text {
+      display: none
+    }
+  }
+}
+
+
+/***************************************************弹窗公共样式**********************************************/
+// 弹窗 custom-class="page-dialog"生效
+@pad: 20px;
+
+.page-dialog {
+  line-height: 1.5;
+
+  .el-dialog {
+    &__header {
+      padding: 8px @pad;
+      .border-bottom;
+    }
+
+    &__title {
+      font-size  : 16px;
+      font-weight: bold;
+    }
+
+    &__headerbtn {
+      top: 12px;
+    }
+
+    &__body {
+      padding: 0;
+      margin : @pad;
+      .font-base
+    }
+
+    &__footer {
+      margin-top    : @pad;
+      padding-left  : @pad;
+      padding-right : @pad;
+      padding-bottom: @pad;
+    }
+  }
+}
+
+
+// 菜单导航poper //如需要再说
+//主题1
+// .el-menu--vertical.theme1{
+
+//   .el-menu--popup .el-menu-item.is-active {
+//     background-color: rgba(64, 118, 255, 1) !important;
+//     color           : #fff;
+//   }
+//   .el-menu--popup .el-menu-item:focus,
+//   .el-menu--popup .el-menu-item:hover{
+//     background: rgba(0, 0, 0, 0.05)
+//   }
+// } 
+
+// popver
+.my-popver {
+  min-width: 90px;
+}
+
+
+.content-cover {
+  display: inline-block;
+  width  : 100%;
+}
+
+.page {
+  .erbai {
+    th {
+      background: #F5F7FA !important
+    }
+
+    .el-table__empty-block {
+      height    : 200px !important;
+      min-height: 200px !important;
+      background: none !important;
+    }
+
+    .el-table__empty-text {
+      display: block !important;
+    }
+  }
+}
+/************************* 状态 ***********************************/
+.status {
+  color: #fff;
+  border-radius: 3px;
+  text-align: center;
+  height: 20px;
+  line-height: 20px;
+  min-width: 45px;
+  padding: 0;
+  &-blue {
+    background-color: @primary;
+  }
+  &-orange {
+    background-color: @warning;
+  }
+  &-green {
+    background-color: @success;
+  }
+  &-red {
+    background-color: @danger;
+  }
+  &-gray{
+    background-color: #CCCCCC;
+  }
+  &-dgray{
+    background-color: @info;
+  }
+  &-dblue{
+    background-color: @theme2;
+  }
+  &-default{
+    background-color: #f2f2f2;
+    color: #303133;
+    border:1px #e4e4e4 solid;
+  }
+}
+/**********************************************表单**********************************/
+.form-wrapper{//新增表单提交按钮固定在底部时，表单高度需增加45
+  padding-bottom:45px
+}

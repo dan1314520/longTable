@@ -1,0 +1,32 @@
+{
+  "files.autoSave": "onWindowChange",
+  "eslint.autoFixOnSave": true,
+  "typescript.preferences.quoteStyle": "single",
+  "vetur.format.defaultFormatterOptions": {
+    "js-beautify-html": {
+      // #vue组件中html代码格式化样式
+      "wrap_attributes": "auto", //也可以设置为“auto”，效果会不一样
+      "wrap_line_length": 900,
+      "end_with_newline": false,
+      "semi": false,
+      "singleQuote": true
+    },
+    "prettier": {
+      "semi": false,
+      "singleQuote": true
+    }
+  },
+  "eslint.validate": [
+    "javascript",
+    {
+      "language": "vue",
+      "autoFix": true
+    },
+    "html",
+    "vue"
+  ],
+  "git.ignoreLimitWarning": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}

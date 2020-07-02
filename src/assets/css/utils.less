@@ -1,0 +1,173 @@
+@import './color.less';
+
+// 边框 border
+
+.no-border {
+    border: none;
+}
+.border{
+    border:1px @border solid
+}
+.border-top {
+    border-top: 1px @border solid
+}
+
+.border-bottom {
+    border-bottom: 1px @border solid
+}
+
+.border-left {
+    border-left: 1px @border solid
+}
+
+.border-right {
+    border-right: 1px @border solid
+}
+
+// 盒子类型
+.border-box {
+    box-sizing: border-box
+}
+
+// 文本布局
+.t-center {
+    text-align: center
+}
+
+// 字体大小
+.font-none {
+    font-size: 0
+}
+
+.font-mini {
+    font-size: 12px;
+}
+
+.font-small {
+    font-size: 14px;
+}
+
+.font-base {
+    font-size: 12px;
+}
+
+.font-medium {
+    font-size: 16px;
+}
+
+.font-large {
+    font-size: 18px;
+}
+
+.font-larger {
+    font-size: 24px
+}
+
+.font-bold {
+    font-weight: bold
+}
+
+// 字体颜色
+.font-blue {
+    color: @primary;
+}
+
+.font-gray {
+    color: #b2b2b2;
+}
+
+.font-green {
+    color: @success
+}
+
+.font-red {
+    color: @danger
+}
+.font-orange{
+    color: @warning
+}
+.font-c-primary {
+    color: @primary
+}
+
+.font-fff {
+    color: @white;
+}
+
+.font-c-aside {
+    color: @font-aside;
+}
+
+// .font-c-head {
+//     color: @font-header-color
+// }
+
+.font-c-main {
+    color: @font-base;
+}
+
+// 布局
+.inline-block {
+    display: inline-block;
+}
+
+.over-hidden {
+    overflow: hidden;
+}
+.overflow-ellipsis{//文字超出显示省略号
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+.v-middle{
+    vertical-align: middle
+}
+.v-top{
+    vertical-align: top
+}
+.f-l {
+    float: left;
+}
+
+.f-r {
+    float: right;
+}
+
+//背景
+.bg-fff {
+    background-color:@white
+}
+
+// 鼠标
+.cur-poi {
+    cursor: pointer;
+}
+
+// width
+.w100 {
+    width: 100px
+}
+.w140 {
+    width: 140px;
+}
+.w170 {
+    width: 170px;
+}
+
+.w200 {
+    width: 200px;
+}
+
+.w300 {
+    width: 300px;
+}
+.w600 {
+    width: 600px;
+}
+.wfull{
+    width:100%
+}
+// 头部行文本垂直居中
+.head-line-height {
+    line-height: @head-height;
+}

@@ -1,0 +1,100 @@
+
+@import '~@/assets/css/color';
+/deep/.el-scrollbar__wrap {
+  overflow-x: hidden;
+}
+
+/deep/.el-menu {
+  border : none;
+  width  : inherit;
+  outline: 0;
+}
+
+.el-scrollbar {
+  width: inherit;
+
+  /deep/.el-menu {
+    background: transparent;
+  }
+}
+
+// ==主题通用============//
+// 文字
+/deep/.el-submenu__title {
+  font-weight: 600;
+}
+/deep/.el-submenu__title i,
+/deep/.el-menu-item i {
+  color: unset !important;
+}
+
+/deep/ li.el-menu-item,
+/deep/ .el-submenu__title {
+  color: #9E9EA9;
+
+  &.is-active {
+    color: #fff;
+  }
+}
+
+// active状态父级菜单文字颜色
+/deep/.el-submenu.is-active>.el-submenu__title {
+  color: #fff;
+}
+
+// ===主题切换=============//
+//主题1
+.theme1 {
+  // active状态父级菜单文字颜色
+  /deep/.el-submenu.is-active>.el-submenu__title {
+    color: @theme3;
+  }
+
+  /deep/.el-submenu__title:focus,
+  /deep/.el-menu-item.is-active:hover,
+  /deep/.el-menu-item.is-active {
+    background: @theme3;
+  }
+
+  /deep/.el-menu-item:hover,
+  /deep/.el-submenu__title:hover {
+    background: rgba(0, 0, 0, 0.04);
+  }
+}
+
+//主题2
+.theme2 {
+  /deep/.el-submenu__title:focus,
+  /deep/.el-menu-item.is-active:hover,
+  /deep/.el-menu-item.is-active {
+    background: @theme3;
+  }
+
+  /deep/li.el-menu-item:hover,
+  /deep/.el-submenu__title:hover {
+    background: rgba(0, 0, 0, 0.2);
+  }
+}
+
+// 主题3
+.theme3 {
+  /deep/ li.el-menu-item,
+  /deep/ .el-submenu__title {
+    color: #B7CBFF;
+
+    &.is-active {
+      color: @theme3;
+    }
+  }
+
+  /deep/.el-submenu__title:focus,
+  /deep/.el-menu-item.is-active:hover,
+  /deep/.el-menu-item.is-active {
+    background: rgb(252, 252, 252);
+  }
+
+  /deep/li.el-menu-item:hover,
+  /deep/.el-submenu__title:hover {
+    background: rgba(0, 0, 0, 0.15);
+  }
+}

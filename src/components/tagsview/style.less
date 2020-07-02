@@ -1,0 +1,71 @@
+@import '~@/assets/css/height';
+
+.tagview {
+  width         : 100%;
+  height        : @tagview-height;
+  line-height: @tagview-height;
+  box-sizing    : border-box;
+  background    : #fff;
+  user-select   : none;
+  white-space   : nowrap;
+  overflow      : hidden;
+
+  /deep/.el-tag {
+    margin-right: 5px;
+  }
+
+  .tag {
+    width      : @tagview-height - 5px;
+    height     : @tagview-height;
+    line-height: @tagview-height;
+    text-align : center;
+    // margin-top : -5px;
+    cursor     : pointer;
+   
+    i{
+      color: #838383;
+    }
+  }
+
+  .tag-prev {
+    width      : @tagview-height;
+  }
+  .tag-main{
+    width: calc(100% - 4*@tagview-height);
+    overflow: hidden;
+  }
+  .tag-next {
+    width      : 3*@tagview-height ;
+  }
+  .tag-scoll-wrapper {
+    display: inline-block;
+}
+  /deep/.el-popover {
+    min-width : unset;
+    box-sizing: border-box;
+  }
+
+  .contextmenu {
+    margin         : 0;
+    background     : #fff;
+    z-index        : 100;
+    position       : absolute;
+    list-style-type: none;
+    padding        : 5px 0;
+    border-radius  : 4px;
+    font-size      : 12px;
+    font-weight    : 400;
+    color          : #333;
+    box-shadow     : 2px 2px 10px -3px rgba(0, 0, 0, 0.3);
+
+    li {
+      margin : 0;
+      padding: 7px 16px;
+      cursor : pointer;
+
+      &:hover {
+        background: #eee;
+      }
+    }
+  }
+}

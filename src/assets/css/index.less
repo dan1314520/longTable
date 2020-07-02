@@ -1,0 +1,222 @@
+/**base模块相关样式 */
+@import './utils.less';
+@import './height.less';
+@collapse_time:250ms;//菜单收起展开动画时间
+// ===========================布局 header===============================//
+.header {
+  height     : @head-height  !important;
+  line-height: @head-height;
+  background : @header-bg;
+  color: #333333;
+  .over-hidden;
+  .font-none;
+  &.bg1{
+    .border-left;
+  }
+  &.bg3{
+    background :@theme3;
+    color:#fff;
+  }
+  &.bg4{
+    background:@theme4;
+    color: #fdfdfd;
+  }
+}
+
+.header-left {
+  min-width: 200px;
+  height   : inherit;
+  overflow : hidden;
+
+  .header-title {
+    font-size  : 18px;
+    font-weight: bold;
+  }
+}
+
+.header-right {
+  height        : inherit;
+  vertical-align: top;
+}
+
+// userhandle
+.header-right-items {
+  height: inherit;
+}
+
+.header-right-item {
+  height      : inherit;
+  margin-right: 20px;
+  position    : relative;
+}
+
+.flow-column {
+  display       : flex;
+  flex-direction: column;
+}
+
+//set
+.set-enter-active,
+.set-leave-active {
+  transition: width 0.5s;
+}
+
+.set-enter,
+.set-leave-to {
+  width: 0;
+}
+
+//taggle-collapse 
+@taggle-menu-height: 25px;
+.toggle-menu {
+  height     : @taggle-menu-height;
+  width      : @taggle-menu-height;
+  line-height: @taggle-menu-height;
+  margin-top : (@head-height - @taggle-menu-height)/2;
+
+  &.iconfont {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+}
+
+// =====================================布局，侧边栏 aside=======================================//
+.aside {
+  // height               : calc(100% - @logo-height);
+  transition           : width @collapse_time;
+  overflow             : hidden;
+  background-image     : url('~@/assets/image/base/aside-bg.png');
+  background-repeat    : no-repeat;
+  background-position-y: 100%;
+
+  &.aside-bg1 {
+    background-color: @theme1;
+  }
+
+  &.aside-bg2 {
+    background-color: @theme2;
+  }
+
+  &.aside-bg3 {
+    background-color: @theme3;
+  }
+  &.aside-bg4 {
+    background-color: @theme4;
+  }
+}
+
+// logo标志
+.logo {
+  width      : 100%;
+  height     : @logo-height;
+  line-height: @head-height;
+  box-sizing : border-box;
+  background :rgba(0, 0, 0, 0.02);
+  &.bg2{
+    border-bottom: 1px #00000012 solid;
+  }
+  &.bg3{
+    background:linear-gradient(to left,@theme3,#1c3d92);
+  }
+  &.bg4{ background:linear-gradient(to left,#15446d, @theme4);}
+  &-img-box{
+    width: 65%;
+    height: inherit;
+    margin-left: 10px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    &>img {
+      width: 65%;
+      transition: width 0.3s;
+      min-width: 110px;
+    }
+  }
+}
+
+// 侧边栏收起和展开
+.aside-openbar {
+  width: @siderbar-width  !important
+}
+
+.aside-hidebar {
+  width: @aside-hidebar-width  !important;
+}
+
+.hide-siderbar {
+  width: 0 !important;
+}
+
+.sidebar.navmenu {
+  width   : inherit;
+  height  : calc(100vh - @logo-height - @aside-user-height - @aside-search-height);
+  overflow: hidden;
+  z-index : 1;
+}
+
+// ================================================ 布局-主内容-main ============================================//
+
+// tagview
+.tag-view {
+  overflow: hidden;
+  height  : @tagview-height ;
+}
+
+// main
+.main {
+  transition: width @collapse_time;
+  height    : calc(100vh - @head-height);
+  overflow  : hidden;
+  padding   : 0 !important;
+  background: rgb(236, 236, 236);
+  // width     : calc(100vw - @siderbar-width)\9; // IE 8 及低于IE8版本 
+
+  .app-main-scrollbar {
+    margin: @main-page-margin 0;
+
+    .app-main {
+      width     : calc(100% - 2*@main-page-margin);
+      // min-width : calc(1200px - @siderbar-width) ;
+      position  : relative;
+      box-sizing: border-box;
+      height    : calc(100vh - @head-height - @tagview-height - 2*@main-page-margin);
+      color     : @font-base;
+      margin    : 0 @main-page-margin;
+    }
+  }
+}
+
+//appmain
+
+.app-enter-active {
+  animation: msgbox-fade-in @siderbar-width-duration-time;
+  transform: translatey(0px);
+}
+
+.app-leave-active {
+  animation: msgbox-fade-out @siderbar-width-duration-time;
+  transform: translatey(0px);
+}
+
+@keyframes msgbox-fade-in {
+  0% {
+    transform: translateX(-12px);
+    opacity  : 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity  : 1;
+  }
+}
+
+@keyframes msgbox-fade-out {
+  0% {
+    transform: translateX(0);
+    opacity  : 1;
+  }
+
+  100% {
+    transform: translateX(12px);
+    opacity  : 0;
+  }
+}

@@ -1,0 +1,48 @@
+[
+  {
+    "id": "1",
+    "label": "会员中心",
+    "icon": "icon-huiyuan",
+    "path": "/userCenter",
+    "children": [
+      {
+        "id": "11",
+        "pId": "1",
+         "icon": "icon-circle",
+        "parentIds": "1",
+        "label": "注册认证",
+        "path": "/userCenter/authentication"
+      },
+      {
+        "id": "12",
+        "pId": "1",
+        "icon": "icon-circle",
+        "parentIds": "1",
+        "label": "会员管理",
+        "path": "/userCenter/manager"
+      }
+    ]
+  } ,{
+    "id": "2",
+    "pId": "",
+    "icon": "icon-shuju",
+    "parentIds": "",
+    "label": "基础数据",
+    "path": "/basicData",
+    "children":[{
+    "id": "21",
+    "pId": "",
+    "icon": "icon-circle",
+    "parentIds": "",
+    "label": "客户管理",
+    "path": "/basicData/custom"
+    },{
+      "id": "22",
+      "pId": "",
+      "icon": "icon-circle",
+      "parentIds": "",
+      "label": "收款账户",
+      "path": "/basicData/payeeAccount"
+      }]
+  }
+]
